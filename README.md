@@ -1,4 +1,4 @@
-# responsive_test_app
+# resilience_app
 
 A new Flutter project.
 

@@ -1057,7 +1057,10 @@ class HomeScreenState extends State<HomeScreen> {
                     //child: new SizedBox(
                       //width: 70.0,
                       child: new Text(
+
                         user.name,
+                        overflow: TextOverflow.ellipsis,
+
                         style: new TextStyle(color: Colors.black),
                       ),
                     //),
