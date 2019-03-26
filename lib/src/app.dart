@@ -4,10 +4,10 @@ import 'screens/home_screen.dart';
 class MyApp extends StatelessWidget {
   Widget build(context) {
     return MaterialApp(
-      title: 'Resilience App',
+      title: 'Resilience',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Resilience App'),
+          title: Text('Resilience'),
         ),
         body: HomeScreen(),
       ),
