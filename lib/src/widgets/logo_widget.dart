@@ -13,12 +13,13 @@ class Logo extends StatelessWidget {
             height: MediaQuery.of(context).size.height / 3.5,
             padding: EdgeInsets.only(left: 20.0, right: 20.0),
             decoration: new BoxDecoration(
+              color: Colors.black,
               border: new Border(
                   bottom: BorderSide(color: Colors.black),
                   right: BorderSide(color: Colors.black)),
             ),
-            child: Image.asset('images/logo/placeholder.com-logo1.jpg',
-                scale: 2.0, width: 250.0, height: 150.0),
+            child: Image.asset('images/logo/logo-footer.png',
+                scale: 1.0, width: 250.0, height: 150.0),
           )
         ]),
         Column(

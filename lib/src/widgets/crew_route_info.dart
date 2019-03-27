@@ -687,7 +687,7 @@ class CrewRouteInfo extends StatelessWidget {
                             .of(context)
                             .size
                             .height / 12,
-                        padding: EdgeInsets.only(top: 20.0),
+                        padding: EdgeInsets.only(top: 8.5),
                         decoration: new BoxDecoration(
                           color: Colors.blue[100],
                           border: new Border(

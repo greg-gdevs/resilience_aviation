@@ -7,6 +7,7 @@ class MyApp extends StatelessWidget {
       title: 'Resilience',
       home: Scaffold(
         appBar: AppBar(
+          //backgroundColor: Colors.black,
           title: Text('Resilience'),
         ),
         body: HomeScreen(),
