@@ -139,6 +139,38 @@ class PreFlightSecurityChecklistState
   void _valueCrewOxygenMasKStowageChanged(bool value) =>
       setState(() => _valueCrewOxygenMasKStowage = value);
 
+  bool _valueSeatsAndStowage = false;
+  void _valueSeatsAndStowageChanged(bool value) =>
+      setState(() => _valueSeatsAndStowage = value);
+
+  bool _valueFloorClearOfObstacles = false;
+  void _valueFloorClearOfObstaclesChanged(bool value) =>
+      setState(() => _valueFloorClearOfObstacles = value);
+
+  bool _valueSideWallsIncludingWindows = false;
+  void _valueSideWallsIncludingWindowsChanged(bool value) =>
+      setState(() => _valueSideWallsIncludingWindows = value);
+
+  bool _valueLightResecces = false;
+  void _valueLightReseccesChanged(bool value) =>
+      setState(() => _valueLightResecces = value);
+
+  bool _valueLifeJacketStowages = false;
+  void _valueLifeJacketStowagesChanged(bool value) =>
+      setState(() => _valueLifeJacketStowages = value);
+
+  bool _valueInspectInternalArea = false;
+  void _valueInspectInternalAreaChanged(bool value) =>
+      setState(() => _valueInspectInternalArea = value);
+
+  bool _valueEmergencyExitDoor = false;
+  void _valueEmergencyExitDoorChanged(bool value) =>
+      setState(() => _valueEmergencyExitDoor = value);
+
+  bool _valueInletScoopsAndExhaustOutlets = false;
+  void _valueInletScoopsAndExhaustOutletsChanged(bool value) =>
+      setState(() => _valueInletScoopsAndExhaustOutlets = value);
+
 
 
   Widget preFlightSecurityChecklistHeading(BuildContext context) {
@@ -796,8 +828,8 @@ class PreFlightSecurityChecklistState
                 ),
               ),
               child: new Checkbox(
-                  value: _valueHydraulicInstallations,
-                  onChanged: _valueHydraulicInstallationsChanged),
+                  value: _valueWheelsAndBrakes,
+                  onChanged: _valueWheelsAndBrakesChanged),
             )
           ]),
           Column(children: [
@@ -1742,7 +1774,7 @@ class PreFlightSecurityChecklistState
                 ),
               ),
               child: new Checkbox(
-                  value: _valuePedestalAndConsoles, onChanged: _valuePedestalAndConsolesChanged),
+                  value: _valueWindshield, onChanged: _valueWindshieldChanged),
             )
           ]),
           Column(children: [
@@ -2063,6 +2095,477 @@ class PreFlightSecurityChecklistState
           Column(),
         ]),
 
+        Row(children: [
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 3,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 15.0, right: 2.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  right: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new Text(
+                'Seats & Stowage Under Seats',
+                style: TextStyle(fontSize: 20.0),
+                textAlign: TextAlign.center,
+              ),
+            )
+          ]),
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 6,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 6.0, right: 2.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  right: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new Checkbox(
+                  value: _valueSeatsAndStowage, onChanged: _valueSeatsAndStowageChanged),
+            )
+          ]),
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 2,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 6.0, left: 20.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  //left: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new TextField(
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Enter Remark',
+                ),
+              ),
+            )
+          ]),
+          Column(),
+        ]),
+
+        Row(children: [
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 3,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 15.0, right: 2.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  right: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new Text(
+                'Floor - Clear of Obstacles',
+                style: TextStyle(fontSize: 20.0),
+                textAlign: TextAlign.center,
+              ),
+            )
+          ]),
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 6,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 6.0, right: 2.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  right: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new Checkbox(
+                  value: _valueFloorClearOfObstacles, onChanged: _valueFloorClearOfObstaclesChanged),
+            )
+          ]),
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 2,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 6.0, left: 20.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  //left: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new TextField(
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Enter Remark',
+                ),
+              ),
+            )
+          ]),
+          Column(),
+        ]),
+
+        Row(children: [
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 3,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 15.0, right: 2.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  right: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new Text(
+                'Side Walls Including Windows',
+                style: TextStyle(fontSize: 20.0),
+                textAlign: TextAlign.center,
+              ),
+            )
+          ]),
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 6,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 6.0, right: 2.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  right: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new Checkbox(
+                  value: _valueSideWallsIncludingWindows, onChanged: _valueSideWallsIncludingWindowsChanged),
+            )
+          ]),
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 2,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 6.0, left: 20.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  //left: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new TextField(
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Enter Remark',
+                ),
+              ),
+            )
+          ]),
+          Column(),
+        ]),
+
+        Row(children: [
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 3,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 15.0, right: 2.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  right: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new Text(
+                'Light Resecces',
+                style: TextStyle(fontSize: 20.0),
+                textAlign: TextAlign.center,
+              ),
+            )
+          ]),
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 6,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 6.0, right: 2.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  right: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new Checkbox(
+                  value: _valueLightResecces, onChanged: _valueLightReseccesChanged),
+            )
+          ]),
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 2,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 6.0, left: 20.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  //left: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new TextField(
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Enter Remark',
+                ),
+              ),
+            )
+          ]),
+          Column(),
+        ]),
+
+        Row(children: [
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 3,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 15.0, right: 2.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  right: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new Text(
+                'Life Jacket Stowages',
+                style: TextStyle(fontSize: 20.0),
+                textAlign: TextAlign.center,
+              ),
+            )
+          ]),
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 6,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 6.0, right: 2.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  right: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new Checkbox(
+                  value: _valueLifeJacketStowages, onChanged: _valueLifeJacketStowagesChanged),
+            )
+          ]),
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 2,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 6.0, left: 20.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  //left: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new TextField(
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Enter Remark',
+                ),
+              ),
+            )
+          ]),
+          Column(),
+        ]),
+
+        Row(children: [
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 3,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 15.0, right: 2.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  right: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new Text(
+                'Inspect Internal Area',
+                style: TextStyle(fontSize: 20.0),
+                textAlign: TextAlign.center,
+              ),
+            )
+          ]),
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 6,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 6.0, right: 2.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  right: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new Checkbox(
+                  value: _valueInspectInternalArea, onChanged: _valueInspectInternalAreaChanged),
+            )
+          ]),
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 2,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 6.0, left: 20.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  //left: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new TextField(
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Enter Remark',
+                ),
+              ),
+            )
+          ]),
+          Column(),
+        ]),
+
+        Row(children: [
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 3,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 15.0, right: 2.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  right: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new Text(
+                'Emergency Exit Door',
+                style: TextStyle(fontSize: 20.0),
+                textAlign: TextAlign.center,
+              ),
+            )
+          ]),
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 6,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 6.0, right: 2.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  right: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new Checkbox(
+                  value: _valueEmergencyExitDoor, onChanged: _valueEmergencyExitDoorChanged),
+            )
+          ]),
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 2,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 6.0, left: 20.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  //left: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new TextField(
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Enter Remark',
+                ),
+              ),
+            )
+          ]),
+          Column(),
+        ]),
+
+        Row(children: [
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 3,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 5.0, right: 2.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  right: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new Text(
+                'Check All Inlet Scoops and Exhaust Outlets',
+                style: TextStyle(fontSize: 20.0),
+                textAlign: TextAlign.center,
+              ),
+            )
+          ]),
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 6,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 6.0, right: 2.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  right: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new Checkbox(
+                  value: _valueInletScoopsAndExhaustOutlets, onChanged: _valueInletScoopsAndExhaustOutletsChanged),
+            )
+          ]),
+          Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 2,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 6.0, left: 20.0),
+              decoration: new BoxDecoration(
+                //color: Colors.grey[300],
+                border: new Border(
+                  bottom: BorderSide(color: Colors.black),
+                  //left: BorderSide(color: Colors.black),
+                ),
+              ),
+              child: new TextField(
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Enter Remark',
+                ),
+              ),
+            )
+          ]),
+          Column(),
+        ]),
       ]),
     );
   }
