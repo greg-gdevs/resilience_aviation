@@ -232,14 +232,12 @@ class FlightCheckListState extends State<FlightCheckList> {
                               border: new Border(top : BorderSide(color: Colors.black), right: BorderSide(color: Colors.black), bottom : BorderSide(color: Colors.black)),
                             ),
                             child: new Checkbox(value: _valueDFNA, onChanged: _valueDFNAChanged),
-
                           )
                         ]
                     ),
                   ]
 
               ),
-
               Row(
                   children: [
                     Column(
@@ -269,7 +267,6 @@ class FlightCheckListState extends State<FlightCheckList> {
                               border: new Border(right: BorderSide(color: Colors.black), bottom : BorderSide(color: Colors.black)),
                             ),
                             child: new Checkbox(value: _valueRFFInc, onChanged: _valueRFFIncChanged),
-
                           )
                         ]
                     ),

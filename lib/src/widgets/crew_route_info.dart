@@ -168,6 +168,7 @@ class CrewRouteInfo extends StatelessWidget {
                         child: new SizedBox(
                           width: 30.0,
                           child:  new TextField(
+                            //textAlign: TextAlign.center,
                             decoration: InputDecoration(
                                 border: InputBorder.none,
                                 hintText: 'Enter A/C Reg'
