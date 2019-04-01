@@ -3,8 +3,14 @@ import 'pilot_dropdown_widget.dart';
 import 'client_dropdown_widget.dart';
 import 'base_dropdown_widget.dart';
 import 'date_picker.dart';
+import 'package:flutter_signature_pad/flutter_signature_pad.dart';
+import 'dart:ui' as ui;
+
 
 class CrewRouteInfo extends StatelessWidget {
+
+  final _sign = GlobalKey<SignatureState>();
+
   Widget build(BuildContext context) {
     return new Column(children: [
       Row(
@@ -112,7 +118,7 @@ class CrewRouteInfo extends StatelessWidget {
             child: new SizedBox(
               width: 30.0,
               child: new TextField(
-                //textAlign: TextAlign.center,
+                textAlign: TextAlign.center,
                 decoration: InputDecoration(
                     border: InputBorder.none, hintText: 'Enter A/C Reg'),
               ),
@@ -525,9 +531,15 @@ class CrewRouteInfo extends StatelessWidget {
                   bottom: BorderSide(color: Colors.black),
                   right: BorderSide(color: Colors.black)),
             ),
-            child: new TextField(
-              decoration:
-                  InputDecoration(border: InputBorder.none, hintText: 'Sign'),
+            child: Signature(
+              color: Colors.black,// Color of the drawing path
+              strokeWidth: 5.0, // with
+              backgroundPainter: null, // Additional custom painter to draw stuff like watermark
+              onSign: () {
+                final sign = _sign.currentState;
+                debugPrint('${sign.points.length} points in the signature');
+              }, // Callback called on user pan drawing
+              key: null, // key that allow you to provide a GlobalKey that'll let you retrieve the image once user has signed
             ),
           ),
         ]),
@@ -639,13 +651,45 @@ class CrewRouteInfo extends StatelessWidget {
                   bottom: BorderSide(color: Colors.black),
                   right: BorderSide(color: Colors.black)),
             ),
-            child: new TextField(
-              decoration:
-                  InputDecoration(border: InputBorder.none, hintText: 'Sign'),
+            child: Signature(
+              color: Colors.black,// Color of the drawing path
+              strokeWidth: 5.0, // with
+              backgroundPainter: _WatermarkPaint("2.0", "2.0"),
+              onSign: () {
+                final sign = _sign.currentState;
+                debugPrint('${sign.points.length} points in the signature');
+                //sign.clear();
+              }, // Callback called on user pan drawing
+              key: _sign,
+              // key that allow you to provide a GlobalKey that'll let you retrieve the image once user has signed
             ),
           ),
         ]),
       ]),
     ]);
   }
+}
+
+class _WatermarkPaint extends CustomPainter {
+  final String price;
+  final String watermark;
+
+  _WatermarkPaint(this.price, this.watermark);
+
+  @override
+  void paint(ui.Canvas canvas, ui.Size size) {
+    canvas.drawCircle(Offset(size.width / 2, size.height / 2), 10.8, Paint()..color = Colors.blue);
+  }
+
+  @override
+  bool shouldRepaint(_WatermarkPaint oldDelegate) {
+    return oldDelegate != this;
+  }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is _WatermarkPaint && runtimeType == other.runtimeType && price == other.price && watermark == other.watermark;
+
+  @override
+  int get hashCode => price.hashCode ^ watermark.hashCode;
 }

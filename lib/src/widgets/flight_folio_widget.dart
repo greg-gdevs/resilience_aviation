@@ -83,85 +83,49 @@ flightFolioTrendMonitoringContainerFunction(context, headerValue) {
   ]);
 }
 
-flightFolioTotalsAndMaintanance(context, value) {
-return Row(children: [
-  Column(children: [
-    Container(
-      width: MediaQuery.of(context).size.width / 4,
-      height: MediaQuery.of(context).size.height / 14,
-      //margin: EdgeInsets.all(12.0),
-      padding: EdgeInsets.only(top: 15.0),
-      decoration: new BoxDecoration(
-        color: Colors.blue[100],
-        border: new Border(
-          right: BorderSide(color: Colors.black),
-          bottom: BorderSide(color: Colors.black),
+flightFolioTotalsAndMaintananceWidget(context, value) {
+  return Column(children: [
+    Row(children: [
+      Column(children: [
+        Container(
+          width: MediaQuery.of(context).size.width / 4,
+          height: MediaQuery.of(context).size.height / 14,
+          //margin: EdgeInsets.all(12.0),
+          padding: EdgeInsets.only(top: 15.0),
+          decoration: new BoxDecoration(
+            color: Colors.blue[100],
+            border: new Border(
+              right: BorderSide(color: Colors.black),
+              bottom: BorderSide(color: Colors.black),
+            ),
+          ),
+          child: new Text(
+            value,
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+            textAlign: TextAlign.center,
+          ),
         ),
-      ),
-      child: new Text(
-        value,
-        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-        textAlign: TextAlign.center,
-      ),
-    ),
-  ]),
-  Column(children: [
-    Container(
-      width: MediaQuery.of(context).size.width / 4,
-      height: MediaQuery.of(context).size.height / 14,
-      //margin: EdgeInsets.all(12.0),
-      padding: EdgeInsets.only(top: 15.0),
-      decoration: new BoxDecoration(
-        border: new Border(
-            right: BorderSide(color: Colors.black),
-            bottom: BorderSide(color: Colors.black)),
-      ),
-      child: new Text(
-        '',
-        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-        textAlign: TextAlign.center,
-      ),
-    ),
-  ]),
-  Column(children: [
-    Container(
-      width: MediaQuery.of(context).size.width / 4,
-      height: MediaQuery.of(context).size.height / 14,
-      //margin: EdgeInsets.all(12.0),
-      padding: EdgeInsets.only(top: 15.0),
-      decoration: new BoxDecoration(
-        color: Colors.blue[100],
-        border: new Border(
-          right: BorderSide(color: Colors.black),
-          bottom: BorderSide(color: Colors.black),
+      ]),
+      Column(children: [
+        Container(
+          width: MediaQuery.of(context).size.width / 4,
+          height: MediaQuery.of(context).size.height / 14,
+          //margin: EdgeInsets.all(12.0),
+          padding: EdgeInsets.only(top: 15.0),
+          decoration: new BoxDecoration(
+            border: new Border(
+                right: BorderSide(color: Colors.black),
+                bottom: BorderSide(color: Colors.black)),
+          ),
+          child: new Text(
+            '',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+            textAlign: TextAlign.center,
+          ),
         ),
-      ),
-      child: new Text(
-        value,
-        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-        textAlign: TextAlign.center,
-      ),
-    ),
-  ]),
-  Column(children: [
-    Container(
-      width: MediaQuery.of(context).size.width / 4,
-      height: MediaQuery.of(context).size.height / 14,
-      //margin: EdgeInsets.all(12.0),
-      padding: EdgeInsets.only(top: 15.0),
-      decoration: new BoxDecoration(
-        border: new Border(
-          bottom: BorderSide(color: Colors.black),
-        ),
-      ),
-      child: new Text(
-        '',
-        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-        textAlign: TextAlign.center,
-      ),
-    ),
-  ]),
-]),
+      ]),
+    ]),
+  ]);
 }
 
 flightFolioGridViewContainer(context, headerValueOne) {
@@ -248,14 +212,24 @@ class Flight_Folio extends StatelessWidget {
     'Start ITT'
   ];
 
-  List<String> flightTotalsBroughtForwardAndMaintenance = ['Flight Time','Inspection Due At', 'Block Time', 'Next Inspection Type', 'Cycles #1', 'Annual Due Date', 'Cycles #2', '', 'Landings', ''];
+  List<String> flightTotalsBroughtForwardAndMaintenanceListOne = [
+    'Flight Time',
+    'Block Time',
+    'Cycles #1',
+    'Cycles #2',
+    'Landings',
+  ];
+
+  List<String> flightTotalsBroughtForwardAndMaintenanceTwo = [
+    'Inspection Due At', 'Next Inspection Type', 'Annual Due Date', '', ''];
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(children: [
         flightFolioHeader(context),
-        flightFolio(context),
+        flightFolioTotalsAndMaintenanceHeaders(context),
+        flightFolioTotalsAndMaintenanceValues(context),
         Container(
             margin: EdgeInsets.only(top: 10.0, bottom: 10.0),
             child: flightFolioGridView(context)),
@@ -331,7 +305,7 @@ class Flight_Folio extends StatelessWidget {
         ]));
   }
 
-  Widget flightFolio(context) {
+  Widget flightFolioTotalsAndMaintenanceHeaders(context) {
     return Container(
       child: Column(children: [
         Row(children: [
@@ -375,321 +349,28 @@ class Flight_Folio extends StatelessWidget {
             ),
           ]),
         ]),
-        Row(children: [
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 14,
-              //margin: EdgeInsets.all(12.0),
-              padding: EdgeInsets.only(top: 15.0),
-              decoration: new BoxDecoration(
-                color: Colors.blue[100],
-                border: new Border(
-                  right: BorderSide(color: Colors.black),
-                  bottom: BorderSide(color: Colors.black),
-                ),
-              ),
-              child: new Text(
-                'Flight Time',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ]),
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 14,
-              //margin: EdgeInsets.all(12.0),
-              padding: EdgeInsets.only(top: 15.0),
-              decoration: new BoxDecoration(
-                border: new Border(
-                    right: BorderSide(color: Colors.black),
-                    bottom: BorderSide(color: Colors.black)),
-              ),
-              child: new Text(
-                '',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ]),
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 14,
-              //margin: EdgeInsets.all(12.0),
-              padding: EdgeInsets.only(top: 15.0),
-              decoration: new BoxDecoration(
-                color: Colors.blue[100],
-                border: new Border(
-                  right: BorderSide(color: Colors.black),
-                  bottom: BorderSide(color: Colors.black),
-                ),
-              ),
-              child: new Text(
-                'Inspection Due At',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ]),
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 14,
-              //margin: EdgeInsets.all(12.0),
-              padding: EdgeInsets.only(top: 15.0),
-              decoration: new BoxDecoration(
-                border: new Border(
-                  bottom: BorderSide(color: Colors.black),
-                ),
-              ),
-              child: new Text(
-                '',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ]),
-        ]),
-        Row(children: [
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 14,
-              //margin: EdgeInsets.all(12.0),
-              padding: EdgeInsets.only(top: 15.0),
-              decoration: new BoxDecoration(
-                color: Colors.blue[100],
-                border: new Border(
-                  right: BorderSide(color: Colors.black),
-                  bottom: BorderSide(color: Colors.black),
-                ),
-              ),
-              child: new Text(
-                'Block Time',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ]),
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 14,
-              //margin: EdgeInsets.all(12.0),
-              padding: EdgeInsets.only(top: 15.0),
-              decoration: new BoxDecoration(
-                border: new Border(
-                    right: BorderSide(color: Colors.black),
-                    bottom: BorderSide(color: Colors.black)),
-              ),
-              child: new Text(
-                '',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ]),
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 14,
-              //margin: EdgeInsets.all(12.0),
-              padding: EdgeInsets.only(top: 15.0),
-              decoration: new BoxDecoration(
-                color: Colors.blue[100],
-                border: new Border(
-                  right: BorderSide(color: Colors.black),
-                  bottom: BorderSide(color: Colors.black),
-                ),
-              ),
-              child: new Text(
-                'Next Inspection Type',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ]),
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 14,
-              //margin: EdgeInsets.all(12.0),
-              padding: EdgeInsets.only(top: 15.0),
-              decoration: new BoxDecoration(
-                border: new Border(
-                  bottom: BorderSide(color: Colors.black),
-                ),
-              ),
-              child: new Text(
-                '',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ]),
-        ]),
-        Row(children: [
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 14,
-              //margin: EdgeInsets.all(12.0),
-              padding: EdgeInsets.only(top: 15.0),
-              decoration: new BoxDecoration(
-                color: Colors.blue[100],
-                border: new Border(
-                  right: BorderSide(color: Colors.black),
-                  bottom: BorderSide(color: Colors.black),
-                ),
-              ),
-              child: new Text(
-                'Cycles #1',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ]),
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 14,
-              //margin: EdgeInsets.all(12.0),
-              padding: EdgeInsets.only(top: 15.0),
-              decoration: new BoxDecoration(
-                border: new Border(
-                    right: BorderSide(color: Colors.black),
-                    bottom: BorderSide(color: Colors.black)),
-              ),
-              child: new Text(
-                '',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ]),
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 14,
-              //margin: EdgeInsets.all(12.0),
-              padding: EdgeInsets.only(top: 15.0),
-              decoration: new BoxDecoration(
-                color: Colors.blue[100],
-                border: new Border(
-                  right: BorderSide(color: Colors.black),
-                  bottom: BorderSide(color: Colors.black),
-                ),
-              ),
-              child: new Text(
-                'Annual Due Date',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ]),
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 14,
-              //margin: EdgeInsets.all(12.0),
-              padding: EdgeInsets.only(top: 15.0),
-              decoration: new BoxDecoration(
-                border: new Border(
-                  bottom: BorderSide(color: Colors.black),
-                ),
-              ),
-              child: new Text(
-                '',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ]),
-        ]),
-        Row(children: [
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 14,
-              //margin: EdgeInsets.all(12.0),
-              padding: EdgeInsets.only(top: 15.0),
-              decoration: new BoxDecoration(
-                color: Colors.blue[100],
-                border: new Border(
-                  right: BorderSide(color: Colors.black),
-                  bottom: BorderSide(color: Colors.black),
-                ),
-              ),
-              child: new Text(
-                'Cycles #2',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ]),
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 14,
-              //margin: EdgeInsets.all(12.0),
-              padding: EdgeInsets.only(top: 15.0),
-              decoration: new BoxDecoration(
-                border: new Border(
-                    right: BorderSide(color: Colors.black),
-                    bottom: BorderSide(color: Colors.black)),
-              ),
-              child: new Text(
-                '',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ]),
-        ]),
-        Row(children: [
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 14,
-              //margin: EdgeInsets.all(12.0),
-              padding: EdgeInsets.only(top: 15.0),
-              decoration: new BoxDecoration(
-                color: Colors.blue[100],
-                border: new Border(
-                  right: BorderSide(color: Colors.black),
-                  bottom: BorderSide(color: Colors.black),
-                ),
-              ),
-              child: new Text(
-                'Cycles #2',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ]),
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 14,
-              //margin: EdgeInsets.all(12.0),
-              padding: EdgeInsets.only(top: 15.0),
-              decoration: new BoxDecoration(
-                border: new Border(
-                    right: BorderSide(color: Colors.black),
-                    bottom: BorderSide(color: Colors.black)),
-              ),
-              child: new Text(
-                '',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ]),
-        ]),
       ]),
+    );
+  }
+
+  Widget flightFolioTotalsAndMaintenanceValues(context) {
+    var flightFolioTotalsAndMaintenanceWidgetListOne = <Column>[];
+
+    var flightFolioTotalsAndMaintenanceWidgetListTwo = <Column>[];
+
+    flightTotalsBroughtForwardAndMaintenanceListOne.forEach((value) {
+      flightFolioTotalsAndMaintenanceWidgetListOne
+          .add(flightFolioTotalsAndMaintananceWidget(context, value));
+    });
+    flightTotalsBroughtForwardAndMaintenanceTwo.forEach((value) {
+      flightFolioTotalsAndMaintenanceWidgetListTwo
+          .add(flightFolioTotalsAndMaintananceWidget(context, value));
+    });
+    return Row(
+      children: [
+        Column(children: flightFolioTotalsAndMaintenanceWidgetListOne),
+        Column( children:flightFolioTotalsAndMaintenanceWidgetListTwo),
+      ],
     );
   }
 
@@ -744,7 +425,7 @@ class Flight_Folio extends StatelessWidget {
 
   Widget flightFolioTrendMonitoringHeader(context) {
     return Container(
-        margin: EdgeInsets.only( bottom: 10.0),
+        margin: EdgeInsets.only(bottom: 10.0),
         child: Row(children: [
           Column(mainAxisAlignment: MainAxisAlignment.start, children: [
             Container(
@@ -768,4 +449,3 @@ class Flight_Folio extends StatelessWidget {
         ]));
   }
 }
-
