@@ -13,7 +13,8 @@ flightFolioTrendMonitoringContainerFunction(context, headerValue) {
             border: new Border(
                 top: BorderSide(color: Colors.black),
                 right: BorderSide(color: Colors.black),
-                bottom: BorderSide(color: Colors.black)),
+//                bottom: BorderSide(color: Colors.black)
+            ),
           ),
           child: Text(
             headerValue,
@@ -26,18 +27,19 @@ flightFolioTrendMonitoringContainerFunction(context, headerValue) {
         Container(
           width: MediaQuery.of(context).size.width / 4,
           height: MediaQuery.of(context).size.height / 12,
-          padding: EdgeInsets.only(top: 22.0),
+          padding: EdgeInsets.only(top: 10.0, left: 20.0),
           decoration: new BoxDecoration(
             //color: Colors.blue[100],
             border: new Border(
                 top: BorderSide(color: Colors.black),
                 right: BorderSide(color: Colors.black),
-                bottom: BorderSide(color: Colors.black)),
+                //bottom: BorderSide(color: Colors.black)
+            ),
           ),
-          child: Text(
-            '',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
+          child: new TextField(
+            decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: ''),
           ),
         )
       ]),
@@ -45,18 +47,19 @@ flightFolioTrendMonitoringContainerFunction(context, headerValue) {
         Container(
           width: MediaQuery.of(context).size.width / 4,
           height: MediaQuery.of(context).size.height / 12,
-          padding: EdgeInsets.only(top: 22.0),
+          padding: EdgeInsets.only(top: 10.0, left: 20.0),
           decoration: new BoxDecoration(
             //color: Colors.blue[100],
             border: new Border(
                 top: BorderSide(color: Colors.black),
                 right: BorderSide(color: Colors.black),
-                bottom: BorderSide(color: Colors.black)),
+                //bottom: BorderSide(color: Colors.black)
+            ),
           ),
-          child: Text(
-            '',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
+          child: new TextField(
+            decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: ''),
           ),
         )
       ]),
@@ -64,18 +67,19 @@ flightFolioTrendMonitoringContainerFunction(context, headerValue) {
         Container(
           width: MediaQuery.of(context).size.width / 4,
           height: MediaQuery.of(context).size.height / 12,
-          padding: EdgeInsets.only(top: 22.0),
+          padding: EdgeInsets.only(top: 10.0, left: 20.0),
           decoration: new BoxDecoration(
             //color: Colors.blue[100],
             border: new Border(
                 top: BorderSide(color: Colors.black),
                 right: BorderSide(color: Colors.black),
-                bottom: BorderSide(color: Colors.black)),
+                //bottom: BorderSide(color: Colors.black)
+            ),
           ),
-          child: Text(
-            '',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
+          child: new TextField(
+            decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: ''),
           ),
         )
       ]),
@@ -111,16 +115,16 @@ flightFolioTotalsAndMaintananceWidget(context, value) {
           width: MediaQuery.of(context).size.width / 4,
           height: MediaQuery.of(context).size.height / 14,
           //margin: EdgeInsets.all(12.0),
-          padding: EdgeInsets.only(top: 15.0),
+          padding: EdgeInsets.only(top: 10.0, left: 20.0),
           decoration: new BoxDecoration(
             border: new Border(
                 right: BorderSide(color: Colors.black),
                 bottom: BorderSide(color: Colors.black)),
           ),
-          child: new Text(
-            '',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-            textAlign: TextAlign.center,
+          child: new TextField(
+            decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: ''),
           ),
         ),
       ]),
@@ -154,7 +158,7 @@ flightFolioGridViewContainer(context, headerValueOne) {
         Container(
           width: MediaQuery.of(context).size.width / 4,
           height: MediaQuery.of(context).size.height / 12,
-          padding: EdgeInsets.only(top: 22.0),
+          padding: EdgeInsets.only(top: 10.0, left: 20.0),
           decoration: new BoxDecoration(
             //color: Colors.blue[100],
             border: new Border(
@@ -162,10 +166,10 @@ flightFolioGridViewContainer(context, headerValueOne) {
                 right: BorderSide(color: Colors.black),
                 bottom: BorderSide(color: Colors.black)),
           ),
-          child: Text(
-            '',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
+          child:new TextField(
+            decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: ''),
           ),
         )
       ]),
@@ -227,7 +231,7 @@ class Flight_Folio extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(children: [
-        flightFolioHeader(context),
+        flightFolioMainHeader(context),
         flightFolioTotalsAndMaintenanceHeaders(context),
         flightFolioTotalsAndMaintenanceValues(context),
         Container(
@@ -239,7 +243,7 @@ class Flight_Folio extends StatelessWidget {
     );
   }
 
-  Widget flightFolioHeader(context) {
+  Widget flightFolioMainHeader(context) {
     return Container(
         margin: EdgeInsets.only(top: 10.0, bottom: 10.0),
         child: Row(children: [
