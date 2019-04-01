@@ -13,6 +13,8 @@ environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"
 
 dependencies:
+  flutter_signature_pad: ^2.0.0+1
+
   flutter:
     sdk: flutter
 
@@ -31,7 +33,7 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   assets:
-  - images/logo/logo-footer.png
+  - images/logo/Resilience_Aviation_Logo.jpg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

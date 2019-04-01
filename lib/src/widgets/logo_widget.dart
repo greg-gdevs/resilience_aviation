@@ -13,12 +13,12 @@ class Logo extends StatelessWidget {
             height: MediaQuery.of(context).size.height / 3.5,
             padding: EdgeInsets.only(left: 20.0, right: 20.0),
             decoration: new BoxDecoration(
-              color: Colors.black,
+              //color: Colors.black,
               border: new Border(
                   bottom: BorderSide(color: Colors.black),
                   right: BorderSide(color: Colors.black)),
             ),
-            child: Image.asset('images/logo/logo-footer.png',
+            child: Image.asset('images/logo/Resilience_Aviation_Logo.jpg',
                 scale: 1.0, width: 250.0, height: 150.0),
           )
         ]),
@@ -59,87 +59,80 @@ class Logo extends StatelessWidget {
                 ),
               ]),
             ]),
-        Column(
-//                crossAxisAlignment: CrossAxisAlignment.start,
-//                mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Row(children: [
-                Container(
-                  //constraints:  BoxConstraints(maxWidth: 300.0,minWidth: 100.0),
-                  width: MediaQuery.of(context).size.width / 4,
-                  height: MediaQuery.of(context).size.height / 14,
-                  padding: EdgeInsets.only(top: 6.0, right: 2.0),
-                  decoration: new BoxDecoration(
-                    border: new Border(
-                        bottom: BorderSide(color: Colors.black),
-                        left: BorderSide(color: Colors.black)),
-                  ),
-                  child: new Text(
-                    'Document No:',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                    textAlign: TextAlign.end,
-                  ),
-                ),
-              ]),
-              Row(children: [
-                Container(
-                  //constraints:  BoxConstraints(maxWidth: 300.0,minWidth: 100.0),
-                  width: MediaQuery.of(context).size.width / 4,
-                  height: MediaQuery.of(context).size.height / 14,
-                  padding: EdgeInsets.only(top: 6.0, right: 2.0),
-                  decoration: new BoxDecoration(
-                    border: new Border(
-                        bottom: BorderSide(color: Colors.black),
-                        left: BorderSide(color: Colors.black)),
-                  ),
-                  child: new Text(
-                    'Effective Date:',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                    textAlign: TextAlign.end,
-                  ),
-                ),
-              ]),
-              Row(children: [
-                Container(
-                  //constraints:  BoxConstraints(maxWidth: 300.0,minWidth: 100.0),
-                  width: MediaQuery.of(context).size.width / 4,
-                  height: MediaQuery.of(context).size.height / 14,
-                  padding: EdgeInsets.only(top: 6.0, right: 2.0),
-                  decoration: new BoxDecoration(
-                    border: new Border(
-                        bottom: BorderSide(color: Colors.black),
-                        left: BorderSide(color: Colors.black)),
-                  ),
-                  child: new Text(
-                    'Issue:',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                    textAlign: TextAlign.end,
-                  ),
-                ),
-              ]),
-              Row(children: [
-                Container(
-                  //constraints:  BoxConstraints(maxWidth: 300.0, minWidth: 100.0),
-                  width: MediaQuery.of(context).size.width / 4,
-                  height: MediaQuery.of(context).size.height / 14,
-                  padding: EdgeInsets.only(top: 6.0, right: 2.0),
-                  decoration: new BoxDecoration(
-                    border: new Border(
-                        bottom: BorderSide(color: Colors.black),
-                        left: BorderSide(color: Colors.black)),
-                  ),
-                  child: new Text(
-                    'Page:',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                    textAlign: TextAlign.end,
-                  ),
-                ),
-              ]),
-            ]),
+        Column(children: [
+          Row(children: [
+            Container(
+              //constraints:  BoxConstraints(maxWidth: 300.0,minWidth: 100.0),
+              width: MediaQuery.of(context).size.width / 4,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 6.0, right: 2.0),
+              decoration: new BoxDecoration(
+                border: new Border(
+                    bottom: BorderSide(color: Colors.black),
+                    left: BorderSide(color: Colors.black)),
+              ),
+              child: new Text(
+                'Document No:',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                textAlign: TextAlign.end,
+              ),
+            ),
+          ]),
+          Row(children: [
+            Container(
+              //constraints:  BoxConstraints(maxWidth: 300.0,minWidth: 100.0),
+              width: MediaQuery.of(context).size.width / 4,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 6.0, right: 2.0),
+              decoration: new BoxDecoration(
+                border: new Border(
+                    bottom: BorderSide(color: Colors.black),
+                    left: BorderSide(color: Colors.black)),
+              ),
+              child: new Text(
+                'Effective Date:',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                textAlign: TextAlign.end,
+              ),
+            ),
+          ]),
+          Row(children: [
+            Container(
+              //constraints:  BoxConstraints(maxWidth: 300.0,minWidth: 100.0),
+              width: MediaQuery.of(context).size.width / 4,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 6.0, right: 2.0),
+              decoration: new BoxDecoration(
+                border: new Border(
+                    bottom: BorderSide(color: Colors.black),
+                    left: BorderSide(color: Colors.black)),
+              ),
+              child: new Text(
+                'Issue:',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                textAlign: TextAlign.end,
+              ),
+            ),
+          ]),
+          Row(children: [
+            Container(
+              //constraints:  BoxConstraints(maxWidth: 300.0, minWidth: 100.0),
+              width: MediaQuery.of(context).size.width / 4,
+              height: MediaQuery.of(context).size.height / 14,
+              padding: EdgeInsets.only(top: 6.0, right: 2.0),
+              decoration: new BoxDecoration(
+                border: new Border(
+                    bottom: BorderSide(color: Colors.black),
+                    left: BorderSide(color: Colors.black)),
+              ),
+              child: new Text(
+                'Page:',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                textAlign: TextAlign.end,
+              ),
+            ),
+          ]),
+        ]),
         Column(
             //crossAxisAlignment: CrossAxisAlignment.start,
             children: [

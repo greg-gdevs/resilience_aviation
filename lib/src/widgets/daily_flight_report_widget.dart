@@ -26,6 +26,7 @@ class DailyFlightReportState extends State<DailyFlightReport> {
       setState(() => _valueFlightBriefing = value);
 
   bool _valueSecondLenses = false;
+
   void _valueSecondLensesChanged(bool value) =>
       setState(() => _valueSecondLenses = value);
 

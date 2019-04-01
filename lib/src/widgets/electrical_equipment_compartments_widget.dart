@@ -7,20 +7,16 @@ class ElectricalEquipmentCompartments extends StatefulWidget {
   }
 }
 
-class ElectricalEquipmentCompartmentsState extends State<ElectricalEquipmentCompartments> {
-
+class ElectricalEquipmentCompartmentsState
+    extends State<ElectricalEquipmentCompartments> {
   @override
-
   Widget build(BuildContext context) {
-
     return Container(
-      child: Column(
-        children: [
-          electricalEquipmentCompartmentsHeader(),
-          electricalEquipmentCompartmentsHeaderCheckBoxes(),
-          remarksWidget()
-        ]
-      ),
+      child: Column(children: [
+        electricalEquipmentCompartmentsHeader(),
+        electricalEquipmentCompartmentsHeaderCheckBoxes(),
+        remarksWidget()
+      ]),
     );
   }
 
@@ -50,213 +46,213 @@ class ElectricalEquipmentCompartmentsState extends State<ElectricalEquipmentComp
   }
 
   bool _valueMainElectronic = false;
+
   void _valueMainElectronicChanged(bool value) =>
       setState(() => _valueMainElectronic = value);
 
   bool _valueForwardElectronic = false;
+
   void _valueForwardElectronicChanged(bool value) =>
       setState(() => _valueForwardElectronic = value);
 
   bool _valueDoNotRemove = false;
+
   void _valueDoNotRemoveChanged(bool value) =>
       setState(() => _valueDoNotRemove = value);
 
   bool _valueCheckAllAreasMain = false;
+
   void _valueCheckAllAreasMainChanged(bool value) =>
       setState(() => _valueCheckAllAreasMain = value);
 
   bool _valueCheckAllAreasForward = false;
+
   void _valueCheckAllAreasForwardChanged(bool value) =>
       setState(() => _valueCheckAllAreasForward = value);
 
-
   Widget electricalEquipmentCompartmentsHeaderCheckBoxes() {
-
-    return Column(
-      children: [
-        Row(children: [
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 12,
-              padding: EdgeInsets.only(top: 10.0),
-              decoration: new BoxDecoration(
-                color: Colors.blue[100],
-                border: new Border(
-                    top: BorderSide(color: Colors.black),
-                    right: BorderSide(color: Colors.black),
-                    bottom: BorderSide(color: Colors.black)),
-              ),
-              child: Text(
-                'Main Electronic',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
-              ),
-            )
-          ]),
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 12,
-              //padding: EdgeInsets.only(top: 12.0),
-              decoration: new BoxDecoration(
-                //color: Colors.blue[100],
-                border: new Border(
-                    top: BorderSide(color: Colors.black),
-                    right: BorderSide(color: Colors.black),
-                    bottom: BorderSide(color: Colors.black)),
-              ),
-              child: new Checkbox(
-                  value: _valueMainElectronic,
-                  onChanged: _valueMainElectronicChanged),
-            )
-          ]),
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 12,
-              padding: EdgeInsets.only(top: 10.0),
-              decoration: new BoxDecoration(
-                color: Colors.blue[100],
-                border: new Border(
-                    top: BorderSide(color: Colors.black),
-                    right: BorderSide(color: Colors.black),
-                    bottom: BorderSide(color: Colors.black)),
-              ),
-              child: Text(
-                'Forward Electronic',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
-              ),
-            )
-          ]),
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 12,
-              //padding: EdgeInsets.only(top: 12.0),
-              decoration: new BoxDecoration(
-                //color: Colors.blue[100],
-                border: new Border(
-                    top: BorderSide(color: Colors.black),
-                    right: BorderSide(color: Colors.black),
-                    bottom: BorderSide(color: Colors.black)),
-              ),
-              child: new Checkbox(
-                  value: _valueForwardElectronic,
-                  onChanged: _valueForwardElectronicChanged),
-            )
-          ]),
+    return Column(children: [
+      Row(children: [
+        Column(children: [
+          Container(
+            width: MediaQuery.of(context).size.width / 4,
+            height: MediaQuery.of(context).size.height / 12,
+            padding: EdgeInsets.only(top: 10.0),
+            decoration: new BoxDecoration(
+              color: Colors.blue[100],
+              border: new Border(
+                  top: BorderSide(color: Colors.black),
+                  right: BorderSide(color: Colors.black),
+                  bottom: BorderSide(color: Colors.black)),
+            ),
+            child: Text(
+              'Main Electronic',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            ),
+          )
         ]),
-
-        Row(children: [
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 12,
-              padding: EdgeInsets.only(top: 12.0),
-              decoration: new BoxDecoration(
-                border: new Border(
-                    right: BorderSide(color: Colors.black),
-                    bottom: BorderSide(color: Colors.black)),
-              ),
-              child: Text(
-                'Do not remove equipment unless obvious signs of interference',
-                style: TextStyle(fontSize: 15, ),
-                textAlign: TextAlign.center,
-              ),
-            )
-          ]),
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 12,
-              //padding: EdgeInsets.only(top: 12.0),
-              decoration: new BoxDecoration(
-                //color: Colors.blue[100],
-                border: new Border(
-                    right: BorderSide(color: Colors.black),
-                    bottom: BorderSide(color: Colors.black)),
-              ),
-              child: new Checkbox(
-                  value: _valueDoNotRemove,
-                  onChanged: _valueDoNotRemoveChanged),
-            )
-          ]),
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 12,
-              padding: EdgeInsets.only(top: 10.0),
-              decoration: new BoxDecoration(
-                border: new Border(
-                    right: BorderSide(color: Colors.black),
-                    bottom: BorderSide(color: Colors.black)),
-              ),
-              child: Text(
-                'Check all areas, floor, walls',
-                style: TextStyle(fontSize: 20),
-                textAlign: TextAlign.center,
-              ),
-            )
-          ]),
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 12,
-              //padding: EdgeInsets.only(top: 12.0),
-              decoration: new BoxDecoration(
-                //color: Colors.blue[100],
-                border: new Border(
-                    right: BorderSide(color: Colors.black),
-                    bottom: BorderSide(color: Colors.black)),
-              ),
-              child: new Checkbox(
-                  value: _valueCheckAllAreasMain,
-                  onChanged: _valueCheckAllAreasMainChanged),
-            )
-          ]),
+        Column(children: [
+          Container(
+            width: MediaQuery.of(context).size.width / 4,
+            height: MediaQuery.of(context).size.height / 12,
+            //padding: EdgeInsets.only(top: 12.0),
+            decoration: new BoxDecoration(
+              //color: Colors.blue[100],
+              border: new Border(
+                  top: BorderSide(color: Colors.black),
+                  right: BorderSide(color: Colors.black),
+                  bottom: BorderSide(color: Colors.black)),
+            ),
+            child: new Checkbox(
+                value: _valueMainElectronic,
+                onChanged: _valueMainElectronicChanged),
+          )
         ]),
-
-        Row(children: [
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 12,
-              padding: EdgeInsets.only(top: 10.0),
-              decoration: new BoxDecoration(
-                border: new Border(
-                    right: BorderSide(color: Colors.black),
-                    ),
-              ),
-              child: Text(
-                'Check all areas, floor, walls',
-                style: TextStyle(fontSize: 20, ),
-                textAlign: TextAlign.center,
-              ),
-            )
-          ]),
-
-          Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width / 4,
-              height: MediaQuery.of(context).size.height / 12,
-              //padding: EdgeInsets.only(top: 12.0),
-              decoration: new BoxDecoration(
-                //color: Colors.blue[100],
-                border: new Border(
-                    right: BorderSide(color: Colors.black),
-                    ),
-              ),
-              child: new Checkbox(
-                  value: _valueCheckAllAreasForward,
-                  onChanged: _valueCheckAllAreasForwardChanged),
-            )
-          ]),
+        Column(children: [
+          Container(
+            width: MediaQuery.of(context).size.width / 4,
+            height: MediaQuery.of(context).size.height / 12,
+            padding: EdgeInsets.only(top: 10.0),
+            decoration: new BoxDecoration(
+              color: Colors.blue[100],
+              border: new Border(
+                  top: BorderSide(color: Colors.black),
+                  right: BorderSide(color: Colors.black),
+                  bottom: BorderSide(color: Colors.black)),
+            ),
+            child: Text(
+              'Forward Electronic',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            ),
+          )
         ]),
-      ]
-    );
-
+        Column(children: [
+          Container(
+            width: MediaQuery.of(context).size.width / 4,
+            height: MediaQuery.of(context).size.height / 12,
+            //padding: EdgeInsets.only(top: 12.0),
+            decoration: new BoxDecoration(
+              //color: Colors.blue[100],
+              border: new Border(
+                  top: BorderSide(color: Colors.black),
+                  right: BorderSide(color: Colors.black),
+                  bottom: BorderSide(color: Colors.black)),
+            ),
+            child: new Checkbox(
+                value: _valueForwardElectronic,
+                onChanged: _valueForwardElectronicChanged),
+          )
+        ]),
+      ]),
+      Row(children: [
+        Column(children: [
+          Container(
+            width: MediaQuery.of(context).size.width / 4,
+            height: MediaQuery.of(context).size.height / 12,
+            padding: EdgeInsets.only(top: 12.0),
+            decoration: new BoxDecoration(
+              border: new Border(
+                  right: BorderSide(color: Colors.black),
+                  bottom: BorderSide(color: Colors.black)),
+            ),
+            child: Text(
+              'Do not remove equipment unless obvious signs of interference',
+              style: TextStyle(
+                fontSize: 15,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          )
+        ]),
+        Column(children: [
+          Container(
+            width: MediaQuery.of(context).size.width / 4,
+            height: MediaQuery.of(context).size.height / 12,
+            //padding: EdgeInsets.only(top: 12.0),
+            decoration: new BoxDecoration(
+              //color: Colors.blue[100],
+              border: new Border(
+                  right: BorderSide(color: Colors.black),
+                  bottom: BorderSide(color: Colors.black)),
+            ),
+            child: new Checkbox(
+                value: _valueDoNotRemove, onChanged: _valueDoNotRemoveChanged),
+          )
+        ]),
+        Column(children: [
+          Container(
+            width: MediaQuery.of(context).size.width / 4,
+            height: MediaQuery.of(context).size.height / 12,
+            padding: EdgeInsets.only(top: 10.0),
+            decoration: new BoxDecoration(
+              border: new Border(
+                  right: BorderSide(color: Colors.black),
+                  bottom: BorderSide(color: Colors.black)),
+            ),
+            child: Text(
+              'Check all areas, floor, walls',
+              style: TextStyle(fontSize: 20),
+              textAlign: TextAlign.center,
+            ),
+          )
+        ]),
+        Column(children: [
+          Container(
+            width: MediaQuery.of(context).size.width / 4,
+            height: MediaQuery.of(context).size.height / 12,
+            //padding: EdgeInsets.only(top: 12.0),
+            decoration: new BoxDecoration(
+              //color: Colors.blue[100],
+              border: new Border(
+                  right: BorderSide(color: Colors.black),
+                  bottom: BorderSide(color: Colors.black)),
+            ),
+            child: new Checkbox(
+                value: _valueCheckAllAreasMain,
+                onChanged: _valueCheckAllAreasMainChanged),
+          )
+        ]),
+      ]),
+      Row(children: [
+        Column(children: [
+          Container(
+            width: MediaQuery.of(context).size.width / 4,
+            height: MediaQuery.of(context).size.height / 12,
+            padding: EdgeInsets.only(top: 10.0),
+            decoration: new BoxDecoration(
+              border: new Border(
+                right: BorderSide(color: Colors.black),
+              ),
+            ),
+            child: Text(
+              'Check all areas, floor, walls',
+              style: TextStyle(
+                fontSize: 20,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          )
+        ]),
+        Column(children: [
+          Container(
+            width: MediaQuery.of(context).size.width / 4,
+            height: MediaQuery.of(context).size.height / 12,
+            //padding: EdgeInsets.only(top: 12.0),
+            decoration: new BoxDecoration(
+              //color: Colors.blue[100],
+              border: new Border(
+                right: BorderSide(color: Colors.black),
+              ),
+            ),
+            child: new Checkbox(
+                value: _valueCheckAllAreasForward,
+                onChanged: _valueCheckAllAreasForwardChanged),
+          )
+        ]),
+      ]),
+    ]);
   }
 
   Widget remarksWidget() {
@@ -290,17 +286,17 @@ class ElectricalEquipmentCompartmentsState extends State<ElectricalEquipmentComp
             decoration: new BoxDecoration(
               //color: Colors.blue[100],
               border: new Border(
-                  bottom: BorderSide(color: Colors.black),
-                  ),
+                bottom: BorderSide(color: Colors.black),
+              ),
             ),
             child: new TextField(
               decoration: InputDecoration(
-                  border: InputBorder.none, hintText: 'Enter your remarks ....'),
+                  border: InputBorder.none,
+                  hintText: 'Enter your remarks ....'),
             ),
           ),
         ]),
       ]),
     );
   }
-
 }

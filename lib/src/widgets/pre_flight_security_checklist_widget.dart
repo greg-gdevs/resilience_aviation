@@ -171,8 +171,6 @@ class PreFlightSecurityChecklistState
   void _valueInletScoopsAndExhaustOutletsChanged(bool value) =>
       setState(() => _valueInletScoopsAndExhaustOutlets = value);
 
-
-
   Widget preFlightSecurityChecklistHeading(BuildContext context) {
     return new Row(mainAxisAlignment: MainAxisAlignment.start, children: [
       Container(

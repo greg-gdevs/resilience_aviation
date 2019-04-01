@@ -6,6 +6,9 @@ import '../widgets/flight_checklist_dropdown.dart';
 import '../widgets/daily_flight_report_widget.dart';
 import '../widgets/captain_crew_report_widget.dart';
 import '../widgets/pre_flight_security_checklist_widget.dart';
+import '../widgets/electrical_equipment_compartments_widget.dart';
+import '../widgets/flight_folio_widget.dart';
+import '../widgets/loop_test_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -25,10 +28,13 @@ class HomeScreenState extends State<HomeScreen> {
         flightDetails(),
         CrewRouteInfo(),
         ninetyDayRecordCheck(),
+        //NinetyDayRecordChecklist(),
         FlightCheckList(),
         DailyFlightReport(),
         CaptainCrewReport(),
         PreFlightSecurityChecklist(),
+        ElectricalEquipmentCompartments(),
+        Flight_Folio(),
       ]),
     );
   }
