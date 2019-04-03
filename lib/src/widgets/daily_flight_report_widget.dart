@@ -729,7 +729,7 @@ class DailyFlightReportState extends State<DailyFlightReport> {
                   Container(
                     width: MediaQuery.of(context).size.width / 8,
                     height: MediaQuery.of(context).size.height / 12,
-                    //padding: EdgeInsets.only(top: 12.0),
+                    padding: EdgeInsets.only(left: 20.0, top: 10.0),
                     decoration: new BoxDecoration(
                       //color: Colors.blue[100],
                       border: new Border(
@@ -803,7 +803,7 @@ class DailyFlightReportState extends State<DailyFlightReport> {
                   Container(
                     width: MediaQuery.of(context).size.width / 8,
                     height: MediaQuery.of(context).size.height / 12,
-                    //padding: EdgeInsets.only(top: 12.0),
+                    padding: EdgeInsets.only(left: 20.0, top: 10.0),
                     decoration: new BoxDecoration(
                       //color: Colors.blue[100],
                       border: new Border(

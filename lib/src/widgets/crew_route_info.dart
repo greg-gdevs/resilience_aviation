@@ -411,7 +411,7 @@ class CrewRouteInfo extends StatelessWidget {
         ]),
         Column(children: [
           Container(
-            constraints: BoxConstraints(maxWidth: 300.0),
+//            constraints: BoxConstraints(maxWidth: 300.0),
             width: MediaQuery.of(context).size.width / 10,
             height: MediaQuery.of(context).size.height / 12,
             padding: EdgeInsets.only(top: 10.0, left: 30.0),
@@ -420,9 +420,17 @@ class CrewRouteInfo extends StatelessWidget {
                   bottom: BorderSide(color: Colors.black),
                   right: BorderSide(color: Colors.black)),
             ),
-            child: new TextField(
-              decoration:
-                  InputDecoration(border: InputBorder.none, hintText: 'Sign'),
+            child: Signature(
+              color: Colors.black,// Color of the drawing path
+              strokeWidth: 5.0, // with
+              backgroundPainter: null,//_WatermarkPaint("2.0", "2.0"),
+              onSign: () {
+                final sign = _sign.currentState;
+                debugPrint('${sign.points.length} points in the signature');
+                //sign.clear();
+              }, // Callback called on user pan drawing
+              key: _sign,
+              // key that allow you to provide a GlobalKey that'll let you retrieve the image once user has signed
             ),
           ),
         ]),
@@ -626,7 +634,7 @@ class CrewRouteInfo extends StatelessWidget {
             constraints: BoxConstraints(maxWidth: 300.0),
             width: MediaQuery.of(context).size.width / 10,
             height: MediaQuery.of(context).size.height / 12,
-            padding: EdgeInsets.only(top: 20.0),
+            //padding: EdgeInsets.only(top: 20.0),
             decoration: new BoxDecoration(
               color: Colors.blue[100],
               border: new Border(
@@ -645,7 +653,7 @@ class CrewRouteInfo extends StatelessWidget {
             constraints: BoxConstraints(maxWidth: 300.0),
             width: MediaQuery.of(context).size.width / 10,
             height: MediaQuery.of(context).size.height / 12,
-            padding: EdgeInsets.only(top: 12.0, left: 30.0),
+            //padding: EdgeInsets.only(top: 12.0, left: 30.0),
             decoration: new BoxDecoration(
               border: new Border(
                   bottom: BorderSide(color: Colors.black),
@@ -654,14 +662,12 @@ class CrewRouteInfo extends StatelessWidget {
             child: Signature(
               color: Colors.black,// Color of the drawing path
               strokeWidth: 5.0, // with
-              backgroundPainter: _WatermarkPaint("2.0", "2.0"),
+              backgroundPainter: null, // Additional custom painter to draw stuff like watermark
               onSign: () {
                 final sign = _sign.currentState;
                 debugPrint('${sign.points.length} points in the signature');
-                //sign.clear();
               }, // Callback called on user pan drawing
-              key: _sign,
-              // key that allow you to provide a GlobalKey that'll let you retrieve the image once user has signed
+              key: null, // key that allow you to provide a GlobalKey that'll let you retrieve the image once user has signed
             ),
           ),
         ]),

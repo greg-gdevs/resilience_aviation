@@ -145,7 +145,8 @@ flightFolioGridViewContainer(context, headerValueOne) {
             border: new Border(
                 top: BorderSide(color: Colors.black),
                 right: BorderSide(color: Colors.black),
-                bottom: BorderSide(color: Colors.black)),
+                //bottom: BorderSide(color: Colors.black)
+            ),
           ),
           child: Text(
             headerValueOne,
@@ -164,7 +165,8 @@ flightFolioGridViewContainer(context, headerValueOne) {
             border: new Border(
                 top: BorderSide(color: Colors.black),
                 right: BorderSide(color: Colors.black),
-                bottom: BorderSide(color: Colors.black)),
+                bottom: BorderSide(color: Colors.black)
+            ),
           ),
           child:new TextField(
             decoration: InputDecoration(
